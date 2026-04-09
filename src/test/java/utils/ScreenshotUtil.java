@@ -11,20 +11,23 @@ import java.nio.file.StandardCopyOption;
 
 public class ScreenshotUtil {
 
-    public static void capture(WebDriver driver, String testName) {
+    public static String capture(WebDriver driver, String testName) {
         try {
             File directory = new File("screenshots");
             if (!directory.exists()) {
                 directory.mkdir();
             }
+            String screenshotPath = "screenshots/" + testName + ".png";
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             Files.copy(
                     src.toPath(),
-                    Paths.get("screenshots/" + testName + ".png"),
+                    Paths.get(screenshotPath),
                     StandardCopyOption.REPLACE_EXISTING
             );
+            return screenshotPath;
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
     }
 }

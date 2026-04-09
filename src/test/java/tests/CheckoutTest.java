@@ -4,11 +4,8 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
-import org.testng.annotations.Listeners;
-import listeners.TestListener;
 import utils.ConfigReader;
 
-@Listeners(TestListener.class)
 public class CheckoutTest extends BaseTest {
 
     @Test

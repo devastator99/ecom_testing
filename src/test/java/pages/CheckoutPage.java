@@ -49,20 +49,16 @@ public class CheckoutPage {
     }
 
     private void fillField(By locator, String value) {
-        WebElement field = wait.waitForClickable(locator);
-        field.click();
-        field.clear();
-        field.sendKeys(value);
-
-        if (!value.equals(field.getAttribute("value"))) {
-            ((JavascriptExecutor) driver).executeScript(
-                    "arguments[0].value = arguments[1];" +
-                            "arguments[0].dispatchEvent(new Event('input', { bubbles: true }));" +
-                            "arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
-                    field,
-                    value
-            );
-        }
+        WebElement field = wait.waitForVisibility(locator);
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].focus();" +
+                        "arguments[0].value = '';" +
+                        "arguments[0].value = arguments[1];" +
+                        "arguments[0].dispatchEvent(new Event('input', { bubbles: true }));" +
+                        "arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+                field,
+                value
+        );
     }
 
     private void click(By locator) {
