@@ -2,6 +2,8 @@
 
 This project is a Selenium + TestNG + Maven UI automation framework for the SauceDemo e-commerce site. It follows a page-object design, uses reusable utilities for driver and wait handling, captures screenshots on failure, and now generates an HTML execution report after each test run.
 
+If you want the fastest path to run the suite, start with [GETTING_STARTED.md](/Users/apple/ecom-testing/ecom-testing/GETTING_STARTED.md).
+
 ## 1. What This Project Does
 
 The framework automates two key user journeys:
