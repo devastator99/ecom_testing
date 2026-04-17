@@ -64,7 +64,7 @@ These tests cover:
 After a run, check these locations:
 
 - `reports/extent-report.html` for the HTML test report
-- `screenshots/` for failure screenshots
+- `screenshots/` for failure screenshots , using selenium
 - `target/surefire-reports/` for Maven and TestNG output
 
 ## 6. If You Want To Run One Test
@@ -103,5 +103,6 @@ Check that Chrome is installed and that the machine can start a normal desktop b
 Open the screenshot in `screenshots/` and the report in `reports/extent-report.html` to see exactly where the flow stopped.
 
 ## 9. What To Read Next
+
 
 If you want a deeper understanding of the framework, read the main [README.md](/Users/apple/ecom-testing/ecom-testing/README.md) after this guide. It explains every class and utility in detail.
